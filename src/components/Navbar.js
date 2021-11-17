@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import Button from '@mui/material/Button';
 import { AppBar, Container, CssBaseline, Toolbar, Typography } from '@mui/material';
 import { makeStyles } from '@mui/styles';
+import { Context } from '../App';
 
 
 const useStyles = makeStyles(theme => ({
@@ -18,6 +19,8 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Navbar = () => {
+
+  const {setCategory, mode} = useContext(Context);
   const classes = useStyles();
   return (
     <>
@@ -27,9 +30,10 @@ const Navbar = () => {
           border:0.2, 
           borderColor:"grey.500", 
           borderRadius:1, 
-          padding: "0 !important"
+          padding: "0 !important",
+          
         }}>
-        <AppBar position="static" elevation={0} color="inherit">
+        <AppBar position="static" elevation={0} color="inherit" sx={{backgroundColor: mode== 0 ? "black !important" : "white"}}>
           <Toolbar>
             <div style={{width: "25%"}}>
               <Typography variant="h6" color="gray" className={classes.title}>
@@ -39,6 +43,7 @@ const Navbar = () => {
             <div style={{width: '75%'}}>
               <div className={classes.allCategory}>
                 <Button 
+                  onClick={() => setCategory("lifestyle")}
                   variant="contained"
                   color="secondary" 
                   sx={{
@@ -49,6 +54,7 @@ const Navbar = () => {
                   }}>
                 Life Style</Button>
                 <Button
+                onClick={() => setCategory("blackwhite")}
                   sx={{
                     backgroundColor:"#4d4d4f", 
                     '&:hover': {
@@ -58,6 +64,7 @@ const Navbar = () => {
                   variant="contained">
                   Black & White</Button>
                 <Button 
+                  onClick={() => setCategory("travel")}
                   variant="contained" 
                   color="success" 
                   sx={{
@@ -66,7 +73,7 @@ const Navbar = () => {
                       color: '#2e7d32',backgroundColor: 'white'
                     }
                   }}>
-                  Success</Button>
+                  Travel</Button>
               </div>
             </div>
           </Toolbar>
