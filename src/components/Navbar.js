@@ -3,7 +3,8 @@ import Button from '@mui/material/Button';
 import { AppBar, Container, CssBaseline, Toolbar, Typography } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import { Context } from '../App';
-
+import { useNavigate } from 'react-router-dom';
+import { Box } from '@mui/system';
 
 const useStyles = makeStyles(theme => ({
 
@@ -19,31 +20,41 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Navbar = () => {
+  const navigate = useNavigate();
 
   const {setCategory, mode} = useContext(Context);
   const classes = useStyles();
+
+  const onClickLifeStyle = () => {
+    setCategory("lifestyle")
+    navigate('/lifestyle')
+  }
+  const onClickCategory = (categoryName) => {
+    setCategory(`${categoryName}`)
+    navigate(`/${categoryName}`)
+  }
+
   return (
     <>
       <CssBaseline/>
-      <Container 
+      <Box 
         sx={{
-          border:0.2, 
-          borderColor:"grey.500", 
+          border:0.1, 
+          borderColor:mode==1 ? "grey.500" : "white", 
           borderRadius:1, 
           padding: "0 !important",
-          
         }}>
         <AppBar position="static" elevation={0} color="inherit" sx={{backgroundColor: mode== 0 ? "black !important" : "white"}}>
           <Toolbar>
             <div style={{width: "25%"}}>
-              <Typography variant="h6" color="gray" className={classes.title}>
-                <a className={classes.link} href="https://ngf">Show Photos</a>
-              </Typography>
+              <Button onClick={() => navigate('/')}>
+                <a className={classes.link} style={{color: mode==1 ? "black" : "white"}}>Show Photos</a>
+              </Button>
             </div>
             <div style={{width: '75%'}}>
               <div className={classes.allCategory}>
                 <Button 
-                  onClick={() => setCategory("lifestyle")}
+                  onClick={() => onClickCategory("lifestyle")}
                   variant="contained"
                   color="secondary" 
                   sx={{
@@ -54,17 +65,17 @@ const Navbar = () => {
                   }}>
                 Life Style</Button>
                 <Button
-                onClick={() => setCategory("blackwhite")}
-                  sx={{
-                    backgroundColor:"#4d4d4f", 
-                    '&:hover': {
-                      color: 'black',backgroundColor: 'white'
-                    }
-                  }} 
-                  variant="contained">
+                  onClick={() => onClickCategory("blackwhite")}
+                    sx={{
+                      backgroundColor:"#4d4d4f", 
+                      '&:hover': {
+                        color: 'black',backgroundColor: 'white'
+                      }
+                    }} 
+                    variant="contained">
                   Black & White</Button>
                 <Button 
-                  onClick={() => setCategory("travel")}
+                  onClick={() => onClickCategory("travel")}
                   variant="contained" 
                   color="success" 
                   sx={{
@@ -78,7 +89,7 @@ const Navbar = () => {
             </div>
           </Toolbar>
         </AppBar>   
-      </Container>
+      </Box>
     </>
   )
 }

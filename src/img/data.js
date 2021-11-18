@@ -197,7 +197,7 @@ const data = [
     {
       "id": 40,
       "category": "travel",
-      "url":"https://assets.bucketlistly.blog/sites/5adf778b6eabcc00190b75b1/content_entry5b155bed5711a8176e9f9783/5c4fbe2246025317508def41/files/nepal-everest-base-camp-everest-travel-photo-20190128094442660-main-image.jpg"
+      "url":"https://images.squarespace-cdn.com/content/v1/52f29591e4b0d3acccdd6286/1512148940670-U245O76QDT1WBGPDXWPK/dmb5-148.jpg?format=2500w"
     },
     {
       "id": 41,
