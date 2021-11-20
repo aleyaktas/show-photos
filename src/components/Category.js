@@ -3,8 +3,12 @@ import { Box } from '@mui/system';
 import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router';
 import { Context } from '../App';
+import SearchIcon from '@mui/icons-material/Search';
+import zoomIcon from '../icons/zoom-icon.png'
 
 const Category = () => {
+  const [id,setId] = useState(-1);
+
   const {allData:data,chooseCol,mode} = useContext(Context)
   let params = useParams()
   const [filteredData, setFilteredData] = useState([])
@@ -13,17 +17,25 @@ const Category = () => {
     setFilteredData(data.filter((item) => item.category===params.category))
   },[params.category])
 
-
+ const onClickButton = (itemId) => {
+  if(id===itemId ) {
+   return setId(-1)
+  }
+  setId(itemId)
+ }
 
   return (
-    <Box sx={{backgroundColor: mode==0 ? "black" : "white",}}>
-      <ImageList sx={{margin:"0 !important", padding:"1%", alignItems:"center"}} cols={chooseCol==1 ? 4 : 3} >
-      {filteredData.map((item) => (<ImageListItem sx={{alignItems:"center",minHeight: "-webkit-fill-available"}} key={item.url}>
+    <Box sx={{backgroundColor: mode==0 ? "#535252" : "white",}}>
+      <ImageList sx={{margin:"0 !important", padding:"1%", alignItems:"center", display:"grid",gridTemplateColumns: id!=-1 ? "repeat(8, 1fr) !important" : "repeat(4, 1fr)"}} cols={chooseCol==1 ? 4 : 3} >
+      {filteredData.map((item) => (
+      <ImageListItem className="listItem" sx={{alignItems:"center",minHeight: "-webkit-fill-available", gridColumn: item.id==id ? "span 8" : null , gridRowEnd:item.id==id ? "sp !important" : "1 span"}} key={item.url} >
         <img
           src={item.url}
           srcSet={item.url}
-          style={{boxShadow: "rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px", objectFit: "fill", width:"85%", marginBottom:"5%"}}
+          className="singleImg"
         />
+        {item.id == id  ?  (<button onClick={() => onClickButton(item.id)} className="imgButton"><img src={zoomIcon} width="35"/></button>) : (<button onClick={() => onClickButton(item.id)} className="imgButton"><SearchIcon sx={{width:"100%", margin:"3%"}}/></button>)}
+        
       </ImageListItem>)
       )}
      </ImageList>

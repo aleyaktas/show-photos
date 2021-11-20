@@ -2,7 +2,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Home from './components/Home'
 import { createContext, useState } from 'react';
-import { Route, Router, Routes } from 'react-router';
+import { Route, Routes } from 'react-router';
 import Category from './components/Category';
 import { BrowserRouter } from 'react-router-dom';
 import data from './img/data';
@@ -20,7 +20,7 @@ function App() {
    <Context.Provider
    value={{category, setCategory, mode, setMode, allData,chooseCol, setChooseCol}}>
       <BrowserRouter>
-      <Container sx={{borderRight: 1, borderLeft:1 , borderColor: "black"}}>
+      <Container sx={{borderRight: 1, borderLeft:1 , borderColor: "black", padding:"0 !important"}}>
       <Navbar/>
       <Home/>
         <Routes>

@@ -1,0 +1,36 @@
+.singleImg {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  object-fit: "cover";
+  width: 95% !important;
+  margin:5%;
+}
+
+.listItem:hover .singleImg {
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;  
+  transition: 0.8s ease !important; 
+  opacity: 0.5;
+}
+.listItem:hover {
+  position: relative;
+}
+.imgButton {
+  display: none !important;
+  opacity: 0.5;
+  border-radius: 20%;
+  padding: 2% 4%;
+
+}
+
+ .listItem:hover .imgButton {
+  opacity: 0.8;
+  display: inline-block !important;
+  position: absolute !important;
+  top: 40%;
+  transition: 1s ease !important;
+}
+
+.imgButton:hover {
+  opacity: 1;
+  background-color: black;
+  color:white;
+}

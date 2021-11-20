@@ -7,7 +7,6 @@ import { useNavigate } from 'react-router-dom';
 import { Box } from '@mui/system';
 
 const useStyles = makeStyles(theme => ({
-
   allCategory: {
     display:"flex", justifyContent:"space-around"
   },
@@ -16,7 +15,6 @@ const useStyles = makeStyles(theme => ({
     textDecoration: "none",
     fontStyle: "italic",
   },
-  
 }));
 
 const Navbar = () => {
@@ -25,10 +23,6 @@ const Navbar = () => {
   const {setCategory, mode} = useContext(Context);
   const classes = useStyles();
 
-  const onClickLifeStyle = () => {
-    setCategory("lifestyle")
-    navigate('/lifestyle')
-  }
   const onClickCategory = (categoryName) => {
     setCategory(`${categoryName}`)
     navigate(`/${categoryName}`)
@@ -44,7 +38,7 @@ const Navbar = () => {
           borderRadius:1, 
           padding: "0 !important",
         }}>
-        <AppBar position="static" elevation={0} color="inherit" sx={{backgroundColor: mode== 0 ? "black !important" : "white"}}>
+        <AppBar position="static" elevation={0} color="inherit" sx={{backgroundColor: mode== 0 ? "#535252 !important" : "white"}}>
           <Toolbar>
             <div style={{width: "25%"}}>
               <Button onClick={() => navigate('/')}>
@@ -67,9 +61,9 @@ const Navbar = () => {
                 <Button
                   onClick={() => onClickCategory("blackwhite")}
                     sx={{
-                      backgroundColor:"#4d4d4f", 
+                      backgroundColor:"white", color:"black",
                       '&:hover': {
-                        color: 'black',backgroundColor: 'white'
+                        color: 'white',backgroundColor: '#4d4d4f'
                       }
                     }} 
                     variant="contained">

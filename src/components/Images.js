@@ -1,30 +1,34 @@
 import { ImageListItem, ImageList } from '@mui/material'
 import { Box } from '@mui/system';
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Context } from '../App';
+import SearchIcon from '@mui/icons-material/Search';
+import zoomIcon from '../icons/zoom-icon.png'
 
 const Images = () => {
+  const [id,setId] = useState(-1);
   const {allData: data,chooseCol, mode} = useContext(Context)
 
-  // const {category} = useContext(Context);
-  // const [dataForCategory, setDataForCategory] = useState([]);
+  const onClickButton = (itemId) => {
+    if(id===itemId ) {
+     return setId(-1)
+    }
+    setId(itemId)
+   }
+
   var items = data.map((item) => item)
   var item = items.sort(() => Math.random() - 0.5)
 
-  // useEffect(() => {
-  //   setDataForCategory(category ? data=(data.filter((item) => item.category===category)) : item)
-  //   console.log(dataForCategory)
-  // }, [category])
-
   return (
-    <Box sx={{backgroundColor: mode==0 ? "black" : "white",}}>
-      <ImageList sx={{margin:"0 !important", padding:"1%"}} cols={chooseCol==1 ? 4 : 3} >
-      {item.map((item) => (<ImageListItem sx={{alignItems:"center",minHeight: "-webkit-fill-available"}} key={item.url}>
+    <Box sx={{backgroundColor: mode==0 ? "#535252" : "white",}}>
+      <ImageList sx={{margin:"0 !important", padding:"1%", alignItems:"center", display:"grid",gridTemplateColumns: id!=-1 ? "repeat(8, 1fr) !important" : "repeat(4, 1fr)"}} cols={chooseCol==1 ? 4 : 3} >
+      {item.map((item) => (<ImageListItem className="listItem" sx={{alignItems:"center",minHeight: "-webkit-fill-available", gridColumn: item.id==id ? "span 8" : null , gridRowEnd:item.id==id ? "sp !important" : "1 span"}} key={item.url}>
         <img
+          className="singleImg"
           src={item.url}
           srcSet={item.url}
-          style={{boxShadow: "rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px", objectFit: "fill", width:"85%", marginBottom:"5%"}}
         />
+        {item.id == id  ?  (<button onClick={() => onClickButton(item.id)} className="imgButton"><img src={zoomIcon} width="35"/></button>) : (<button onClick={() => onClickButton(item.id)} className="imgButton"><SearchIcon sx={{width:"100%", margin:"3%"}}/></button>)}
       </ImageListItem>)
       )}
      </ImageList>
