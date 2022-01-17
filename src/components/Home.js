@@ -19,35 +19,33 @@ const Home = () => {
           backgroundColor: mode==0 ? "#535252" : "white",
         }}
       >
-      <div style={{paddingTop:'1%', textAlign: 'end', height:'10%', display:"flex", justifyContent:"space-between"}}>
-        <Button onClick={async () => await setMode(!mode)} sx={{
-            width: "0.4%",
-            marginLeft:"1%",
-            backgroundColor: mode==1 ? "white !important" : "#535252 !important"
-          }}>
-            {mode == 1 ? <WbIncandescent sx={{color:"black"}}/> : <WbIncandescentOutlined sx={{color:"white"}}/>}
-        </Button>
-        <div>
-          <Button onClick={() => setChooseCol(0)} size="small" sx={{
-            marginRight: 1
-          }}>
-            {mode==1? 
-            <img class="round" src={columnThree} alt="user" width="70%" height="25"/> 
-            :
-            <img class="round" src={columnThreeLight} style={{backgroundColor:"white"}} alt="user" width="70%" height="25"/> }
-          </Button >
-          <Button onClick={() => setChooseCol(1)} size="small" sx={{
-          }}>
-            {mode==1?
-            <img class="round" src={columnFour} alt="user" width="80%" height="25"/>
-            :
-            <img class="round" src={columnFourLight} style={{backgroundColor:"white"}} alt="user" width="80%" height="25"/>
-            }
+        <div style={{paddingTop:'1%', textAlign: 'end', height:'10%', display:"flex", justifyContent:"space-between"}}>
+          <Button onClick={async () => await setMode(!mode)} sx={{
+              width: "0.4%",
+              marginLeft:"1%",
+              backgroundColor: mode==1 ? "white !important" : "#535252 !important"
+            }}>
+              {mode == 1 ? <WbIncandescent sx={{color:"black"}}/> : <WbIncandescentOutlined sx={{color:"white"}}/>}
           </Button>
-        </div> 
-      </div>
-
-      
+          <div>
+            <Button className="columnButton" onClick={() => setChooseCol(0)} size="small" sx={{
+              marginRight: 1
+            }}>
+              {mode==1? 
+              <img class="round" src={columnThree} alt="user" width="70%" height="25"/> 
+              :
+              <img class="round" src={columnThreeLight} style={{backgroundColor:"white"}} alt="user" width="70%" height="25"/> }
+            </Button >
+            <Button className="columnButton" onClick={() => setChooseCol(1)} size="small" sx={{
+            }}>
+              {mode==1?
+              <img class="round" src={columnFour} alt="user" width="80%" height="25"/>
+              :
+              <img class="round" src={columnFourLight} style={{backgroundColor:"white"}} alt="user" width="80%" height="25"/>
+              }
+            </Button>
+          </div> 
+        </div>
       </Box>
     </>
   )

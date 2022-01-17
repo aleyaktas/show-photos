@@ -33,7 +33,8 @@ const Navbar = () => {
       <CssBaseline/>
       <Box 
         sx={{
-          border:0.1, 
+          borderTop: 0.1,
+          borderBottom:0.1,
           borderColor:mode==1 ? "grey.500" : "white", 
           borderRadius:1, 
           padding: "0 !important",
@@ -41,13 +42,16 @@ const Navbar = () => {
         <AppBar position="static" elevation={0} color="inherit" sx={{backgroundColor: mode== 0 ? "#535252 !important" : "white"}}>
           <Toolbar>
             <div style={{width: "25%"}}>
-              <Button onClick={() => navigate('/')}>
+              <Button 
+                className="navbarButton"
+                onClick={() => navigate('/')}>
                 <a className={classes.link} style={{color: mode==1 ? "black" : "white"}}>Show Photos</a>
               </Button>
             </div>
             <div style={{width: '75%'}}>
               <div className={classes.allCategory}>
                 <Button 
+                  className="navbarButton"
                   onClick={() => onClickCategory("lifestyle")}
                   variant="contained"
                   color="secondary" 
@@ -59,6 +63,7 @@ const Navbar = () => {
                   }}>
                 Life Style</Button>
                 <Button
+                  className="navbarButton"
                   onClick={() => onClickCategory("blackwhite")}
                     sx={{
                       backgroundColor:"white", color:"black",
@@ -69,6 +74,7 @@ const Navbar = () => {
                     variant="contained">
                   Black & White</Button>
                 <Button 
+                  className="navbarButton"
                   onClick={() => onClickCategory("travel")}
                   variant="contained" 
                   color="success" 

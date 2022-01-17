@@ -20,7 +20,7 @@ function App() {
    <Context.Provider
    value={{category, setCategory, mode, setMode, allData,chooseCol, setChooseCol}}>
       <BrowserRouter>
-      <Container sx={{borderRight: 1, borderLeft:1 , borderColor: "black", padding:"0 !important"}}>
+      <Container sx={{ padding:"0 !important"}}>
       <Navbar/>
       <Home/>
         <Routes>
