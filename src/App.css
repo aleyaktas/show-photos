@@ -2,12 +2,12 @@
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   object-fit: "cover";
   width: 95% !important;
-  margin:5%;
+  margin: 5%;
 }
 
 .listItem:hover .singleImg {
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;  
-  transition: 0.8s ease !important; 
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  transition: 0.8s ease !important;
   opacity: 0.5;
 }
 .listItem:hover {
@@ -18,10 +18,9 @@
   opacity: 0.5;
   border-radius: 20%;
   padding: 2% 4%;
-
 }
 
- .listItem:hover .imgButton {
+.listItem:hover .imgButton {
   opacity: 0.8;
   display: inline-block !important;
   position: absolute !important;
@@ -32,16 +31,16 @@
 .imgButton:hover {
   opacity: 1;
   background-color: black;
-  color:white;
+  color: white;
 }
 
 .overlay {
-  height: 85.9vh;
+  height: "auto";
   border: none;
 }
 
-@media (max-width:576px){
-  .navbarButton{
+@media (max-width: 600px) {
+  .navbarButton {
     width: 10%;
     padding: 1% !important;
     margin: 3% !important;
@@ -51,10 +50,65 @@
     font-size: 0.7rem !important;
   }
   .overlay {
-    height: 86.6vh;
+    height: "auto";
   }
   .columnButton {
     display: none !important;
   }
+  .css-150zyc0-MuiGrid-root {
+    display: none;
+  }
+  .css-yetrb0-MuiImageList-root {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+  .imgButton {
+    display: none !important;
+    cursor: none !important;
+    padding: 0px;
+    border: 0px;
+  }
+  .css-16v36s6-MuiSvgIcon-root {
+    display: none !important;
+  }
+  .zoomIcon {
+    display: none !important;
+  }
+}
 
+/* min width 600 and max width 900px */
+
+@media (min-width: 600px) and (max-width: 900px) {
+  .navbarButton {
+    width: 10%;
+    padding: 1% !important;
+    margin: 3% !important;
+    font-size: 0.6rem !important;
+  }
+  .navbarButton a {
+    font-size: 0.7rem !important;
+  }
+  .overlay {
+    height: "auto";
+  }
+  .columnButton {
+    display: none !important;
+  }
+  .css-150zyc0-MuiGrid-root {
+    display: none;
+  }
+  .css-yetrb0-MuiImageList-root {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .imgButton {
+    display: none !important;
+    pointer-events: none !important;
+    border: 0px;
+    padding: 0px;
+  }
+  .css-16v36s6-MuiSvgIcon-root {
+    display: none !important;
+  }
+  .zoomIcon {
+    display: none !important;
+  }
 }
