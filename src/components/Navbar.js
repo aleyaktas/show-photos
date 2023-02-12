@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -15,6 +15,8 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { useNavigate } from "react-router";
 import { Context } from "../App";
+import { Grid, useMediaQuery } from "@mui/material";
+import { WbIncandescent, WbIncandescentOutlined } from "@mui/icons-material";
 
 // const drawerWidth = 240;
 const navItems = ["LIFE STYLE", "BLACK & WHITE", "TRAVEL"];
@@ -22,8 +24,9 @@ const navItemsLink = ["lifestyle", "blackwhite", "travel"];
 
 const Navbar = (props) => {
   const { window } = props;
-  const [mobileOpen, setMobileOpen] = React.useState(false);
-  const { setCategory, mode } = useContext(Context);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const { setCategory, mode, setMode } = useContext(Context);
+  const matches = useMediaQuery("(min-width:600px)");
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -61,18 +64,16 @@ const Navbar = (props) => {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    // <Box sx={{ display: "flex" }}>
     <Box
       sx={{
         display: "flex",
         borderBottom: 0.1,
         borderColor: mode == 1 ? "grey.500" : "white",
         borderRadius: 1,
-        // padding: "0 !important",
       }}
     >
       <CssBaseline />
-      {/* <AppBar component="nav" sx={{ backgroundColor: "white" }}> */}
+
       <AppBar
         position="static"
         elevation={0}
@@ -89,6 +90,25 @@ const Navbar = (props) => {
           >
             <MenuIcon />
           </IconButton>
+          {!matches && (
+            <Button
+              onClick={async () => await setMode(!mode)}
+              sx={{
+                width: "0.4%",
+                marginLeft: "20px",
+                backgroundColor:
+                  mode == 1 ? "white !important" : "#535252 !important",
+                marginLeft: "auto",
+              }}
+            >
+              {mode == 1 ? (
+                <WbIncandescent sx={{ color: "black" }} />
+              ) : (
+                <WbIncandescentOutlined sx={{ color: "white" }} />
+              )}
+            </Button>
+          )}
+
           <Typography
             variant="h6"
             component="div"

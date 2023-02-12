@@ -55,23 +55,11 @@
   .columnButton {
     display: none !important;
   }
-  .css-150zyc0-MuiGrid-root {
-    display: none;
-  }
-  .css-yetrb0-MuiImageList-root {
-    grid-template-columns: repeat(1, 1fr) !important;
-  }
   .imgButton {
     display: none !important;
     cursor: none !important;
     padding: 0px;
     border: 0px;
-  }
-  .css-16v36s6-MuiSvgIcon-root {
-    display: none !important;
-  }
-  .zoomIcon {
-    display: none !important;
   }
 }
 
@@ -93,22 +81,11 @@
   .columnButton {
     display: none !important;
   }
-  .css-150zyc0-MuiGrid-root {
-    display: none;
-  }
-  .css-yetrb0-MuiImageList-root {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
+
   .imgButton {
     display: none !important;
     pointer-events: none !important;
     border: 0px;
     padding: 0px;
-  }
-  .css-16v36s6-MuiSvgIcon-root {
-    display: none !important;
-  }
-  .zoomIcon {
-    display: none !important;
   }
 }

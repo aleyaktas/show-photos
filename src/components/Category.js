@@ -1,4 +1,4 @@
-import { ImageList, ImageListItem } from "@mui/material";
+import { ImageList, ImageListItem, useMediaQuery } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router";
@@ -8,6 +8,7 @@ import zoomIcon from "../icons/zoom-icon.png";
 
 const Category = () => {
   const [id, setId] = useState(-1);
+  const matches = useMediaQuery("(min-width:600px)");
 
   const { allData: data, chooseCol, mode, category } = useContext(Context);
   let params = useParams();
@@ -44,7 +45,7 @@ const Category = () => {
           gridTemplateColumns:
             id != -1 ? "repeat(8, 1fr) !important" : "repeat(4, 1fr)",
         }}
-        cols={chooseCol == 1 ? 4 : 3}
+        cols={!matches ? 1 : chooseCol == 1 ? 4 : 3}
       >
         {filteredData.map((item) => (
           <ImageListItem
@@ -66,12 +67,14 @@ const Category = () => {
                 <img src={zoomIcon} width="35" />
               </button>
             ) : (
-              <button
-                onClick={() => onClickButton(item.id)}
-                className="imgButton"
-              >
-                <SearchIcon sx={{ width: "100%", margin: "3%" }} />
-              </button>
+              matches && (
+                <button
+                  onClick={() => onClickButton(item.id)}
+                  className="imgButton"
+                >
+                  <SearchIcon sx={{ width: "100%", margin: "3%" }} />
+                </button>
+              )
             )}
           </ImageListItem>
         ))}

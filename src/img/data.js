@@ -142,7 +142,7 @@ const data = [
   {
     id: 29,
     category: "lifestyle",
-    url: "http://elina-photography.com/wp-content/uploads/2016/01/EMK_0361web-noresize.jpg",
+    url: "https://www.apa.org/images/lifestyle-changes-title-image_tcm7-211644.jpg",
   },
   {
     id: 30,
@@ -167,7 +167,7 @@ const data = [
   {
     id: 34,
     category: "lifestyle",
-    url: "https://format-com-cld-res.cloudinary.com/image/private/s--7gsfTLRN--/c_limit,g_center,h_1200,w_65535/fl_keep_iptc.progressive,q_95/75345-6930549-Michelle_Bryant_Esesh214.jpg",
+    url: "https://cdn.tatilsepeti.com/Files/Images/Tesis/06914/1050X700/tsr06914637178049831178006.jpg",
   },
   {
     id: 35,
@@ -227,7 +227,7 @@ const data = [
   {
     id: 46,
     category: "travel",
-    url: "https://parade.com/wp-content/uploads/2019/12/travel-instagram-captions.jpg",
+    url: "https://image.cnbcfm.com/api/v1/image/107178919-1673854215895-gettyimages-669463000-shutterstock_621020393.jpeg?v=1674003106",
   },
   {
     id: 47,

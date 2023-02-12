@@ -1,4 +1,4 @@
-import { ImageListItem, ImageList } from "@mui/material";
+import { ImageListItem, ImageList, useMediaQuery } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useContext, useState } from "react";
 import { Context } from "../App";
@@ -8,6 +8,7 @@ import zoomIcon from "../icons/zoom-icon.png";
 const Images = () => {
   const [id, setId] = useState(-1);
   const { allData: data, chooseCol, mode } = useContext(Context);
+  const matches = useMediaQuery("(min-width:600px)");
 
   const onClickButton = (itemId) => {
     if (id === itemId) {
@@ -47,6 +48,7 @@ const Images = () => {
             key={item.url}
           >
             <img className="singleImg" src={item.url} srcSet={item.url} />
+
             {item.id == id ? (
               <div className="containerZoom">
                 <button
@@ -61,7 +63,12 @@ const Images = () => {
                 onClick={() => onClickButton(item.id)}
                 className="imgButton"
               >
-                <SearchIcon sx={{ width: "100%", margin: "3%" }} />
+                <SearchIcon
+                  sx={{
+                    width: "100%",
+                    margin: "3%",
+                  }}
+                />
               </button>
             )}
           </ImageListItem>

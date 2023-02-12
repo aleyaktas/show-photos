@@ -1,4 +1,4 @@
-import { Button, Grid } from "@mui/material";
+import { Button, Grid, useMediaQuery } from "@mui/material";
 import React, { useContext } from "react";
 import { WbIncandescentOutlined } from "@mui/icons-material";
 import { WbIncandescent } from "@mui/icons-material";
@@ -8,6 +8,8 @@ import { Context } from "../App";
 
 const ModeItems = () => {
   const { mode, setMode, setChooseCol } = useContext(Context);
+  const matches = useMediaQuery("(min-width:600px)");
+
   return (
     <Grid
       sx={{
@@ -33,11 +35,11 @@ const ModeItems = () => {
               mode == 1 ? "white !important" : "#535252 !important",
           }}
         >
-          {mode == 1 ? (
+          {matches && mode == 1 ? (
             <WbIncandescent sx={{ color: "black" }} />
-          ) : (
+          ) : matches && mode == 0 ? (
             <WbIncandescentOutlined sx={{ color: "white" }} />
-          )}
+          ) : null}
         </Button>
         <div>
           <Button
