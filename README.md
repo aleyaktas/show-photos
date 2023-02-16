@@ -30,15 +30,11 @@ Demo link: https://showphotos.aleynaaktas.me
 
 
 ## Photos related to the project
-![1](https://user-images.githubusercontent.com/76265779/150322371-e7d88a49-7964-4c19-ab20-4124133a52ed.png)
+![1](https://user-images.githubusercontent.com/76265779/219507310-7c107369-e585-4aeb-b261-e82689f34ae0.png)
 ## Dark mode
-![2](https://user-images.githubusercontent.com/76265779/150322376-42c29b6b-f675-4f5e-ac4c-344c667494b1.png)
+![2](https://user-images.githubusercontent.com/76265779/219507348-52a1e609-62e5-4105-8b38-dd1f6a40c589.png)
 ## Zoom picture
-![3](https://user-images.githubusercontent.com/76265779/150322384-806f4e5b-98b7-45d5-afb4-39638b2f1526.png)
-
-
-
-
+![3](https://user-images.githubusercontent.com/76265779/219507367-d76de281-d940-46c9-ac8a-abc0be5ab7ee.png)
 
 
 
