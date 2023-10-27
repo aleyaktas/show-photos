@@ -88,7 +88,11 @@ const Navbar = (props) => {
             onClick={handleDrawerToggle}
             sx={{ mr: 2, display: { sm: "none" } }}
           >
-            <MenuIcon />
+            <MenuIcon
+              sx={{
+                color: mode == 1 ? "black" : "white",
+              }}
+            />
           </IconButton>
           {!matches && (
             <Button

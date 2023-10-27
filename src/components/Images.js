@@ -1,9 +1,10 @@
 import { ImageListItem, ImageList, useMediaQuery } from "@mui/material";
 import { Box } from "@mui/system";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../App";
 import SearchIcon from "@mui/icons-material/Search";
 import zoomIcon from "../icons/zoom-icon.png";
+import ModeItems from "./ModeItems";
 
 const Images = () => {
   const [id, setId] = useState(-1);
@@ -16,9 +17,13 @@ const Images = () => {
     }
     setId(itemId);
   };
-
+  const [item, setItem] = useState([]);
   var items = data.map((item) => item);
-  var item = items.sort(() => Math.random() - 0.5);
+  // var item = items.sort(() => Math.random() - 0.5);
+
+  useEffect(() => {
+    setItem(items.sort(() => Math.random() - 0.5));
+  }, [data]);
 
   return (
     <Box
@@ -34,7 +39,7 @@ const Images = () => {
           gridTemplateColumns:
             id != -1 ? "repeat(8, 1fr) !important" : "repeat(4, 1fr)",
         }}
-        cols={chooseCol == 1 ? 4 : 3}
+        cols={!matches ? 1 : chooseCol == 1 ? 4 : 3}
       >
         {item.map((item) => (
           <ImageListItem
@@ -59,17 +64,19 @@ const Images = () => {
                 </button>
               </div>
             ) : (
-              <button
-                onClick={() => onClickButton(item.id)}
-                className="imgButton"
-              >
-                <SearchIcon
-                  sx={{
-                    width: "100%",
-                    margin: "3%",
-                  }}
-                />
-              </button>
+              matches && (
+                <button
+                  onClick={() => onClickButton(item.id)}
+                  className="imgButton"
+                >
+                  <SearchIcon
+                    sx={{
+                      width: "100%",
+                      margin: "3%",
+                    }}
+                  />
+                </button>
+              )
             )}
           </ImageListItem>
         ))}

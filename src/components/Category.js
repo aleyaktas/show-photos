@@ -16,7 +16,7 @@ const Category = () => {
 
   useEffect(() => {
     setFilteredData(data.filter((item) => item.category === params.category));
-    console.log(filteredData);
+    setId(-1);
   }, [params.category]);
 
   useEffect(() => {

@@ -15,13 +15,12 @@ const ModeItems = () => {
       sx={{
         padding: "0 !important",
         backgroundColor: mode == 0 ? "#535252" : "white",
+        display: { xs: "none", md: "flex" },
       }}
     >
       <div
         style={{
-          paddingTop: "1%",
-          textAlign: "end",
-          height: "10%",
+          width: "100%",
           display: "flex",
           justifyContent: "space-between",
         }}
@@ -30,7 +29,7 @@ const ModeItems = () => {
           onClick={async () => await setMode(!mode)}
           sx={{
             width: "0.4%",
-            marginLeft: "20px",
+            marginLeft: "10px",
             backgroundColor:
               mode == 1 ? "white !important" : "#535252 !important",
           }}
@@ -46,9 +45,6 @@ const ModeItems = () => {
             className="columnButton"
             onClick={() => setChooseCol(0)}
             size="small"
-            sx={{
-              marginRight: "10px",
-            }}
           >
             {mode == 1 ? (
               <CalendarViewMonthIcon
@@ -64,7 +60,6 @@ const ModeItems = () => {
             className="columnButton"
             onClick={() => setChooseCol(1)}
             size="small"
-            sx={{ marginRight: "20px" }}
           >
             {mode == 1 ? (
               <CalendarViewWeekIcon sx={{ color: "black", fontSize: "40px" }} />

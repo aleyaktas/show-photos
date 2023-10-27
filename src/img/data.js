@@ -2,12 +2,12 @@ const data = [
   {
     id: 1,
     category: "blackwhite",
-    url: "https://thumbs.dreamstime.com/b/mighty-beautiful-lion-resting-african-savannah-black-white-kenya-96042281.jpg",
+    url: "https://www.befunky.com/images/wp/wp-2017-11-Black-And-White-Photos-15.jpg?auto=avif,webp&format=jpg&width=1450",
   },
   {
     id: 2,
     category: "blackwhite",
-    url: "https://images.pexels.com/photos/60342/pexels-photo-60342.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    url: "https://wallpaper.dog/large/17272969.jpg",
   },
   {
     id: 3,
@@ -17,7 +17,7 @@ const data = [
   {
     id: 4,
     category: "blackwhite",
-    url: "https://haber.sol.org.tr/sites/default/files/styles/content_image_size_type4/public/images/content/article/2021/11/12/%C3%A7%C4%B1plak%20arama.jpg?itok=XBzJQopa",
+    url: "https://images8.alphacoders.com/712/712496.jpg",
   },
   {
     id: 5,
@@ -27,17 +27,17 @@ const data = [
   {
     id: 6,
     category: "blackwhite",
-    url: "https://thumbs.dreamstime.com/b/calm-scene-black-white-abandoned-jetty-teluk-tempoyak-penang-malaysia-fine-art-41917535.jpg",
+    url: "https://images.pexels.com/photos/573294/pexels-photo-573294.jpeg?auto=compress&cs=tinysrgb&w=1600",
   },
   {
     id: 7,
     category: "blackwhite",
-    url: "https://cdn.mos.cms.futurecdn.net/5PMe5hr8tjSS9Nq5d6Cebe-1200-80.jpg",
+    url: "https://images.pexels.com/photos/3727219/pexels-photo-3727219.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },
   {
     id: 8,
     category: "blackwhite",
-    url: "https://121clicks.com/wp-content/uploads/2014/08/great_black_and_white_photos_02.jpg",
+    url: "https://images.pexels.com/photos/13517496/pexels-photo-13517496.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },
   {
     id: 9,
@@ -47,7 +47,7 @@ const data = [
   {
     id: 10,
     category: "blackwhite",
-    url: "https://www.thephotoargus.com/wp-content/uploads/2012/04/stunning-black-and-white-25.jpg",
+    url: "https://wallpaper.dog/large/17273038.jpg",
   },
   {
     id: 11,
@@ -72,7 +72,7 @@ const data = [
   {
     id: 15,
     category: "blackwhite",
-    url: "https://www.verywellmind.com/thmb/t_7YKfvd1lT4H60rXsNR5v9XPA0=/2048x1368/filters:fill%28ABEAC3,1%29/GettyImages-569191285-56a7984e5f9b58b7d0ebfbca.jpg",
+    url: "https://images.pexels.com/photos/13371780/pexels-photo-13371780.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },
   {
     id: 16,
